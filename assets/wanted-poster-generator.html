@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Carteles Wanted - One Piece</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Cinzel:wght@700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1a2332 0%, #006994 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'Pirata One', cursive;
+            color: #FFD700;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0 #8B4513;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #f4e8d0;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .posters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* Wanted Poster Styles */
+        .wanted-poster {
+            background: linear-gradient(145deg, #f4e8d0, #e8d7b8);
+            border: 8px solid #5a3a1a;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .wanted-poster:hover {
+            transform: translateY(-8px) rotate(1deg);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Wanted Header */
+        .wanted-header {
+            font-family: 'Pirata One', cursive;
+            font-size: 2.5rem;
+            color: #8B0000;
+            text-align: center;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        /* Character Portrait Area */
+        .portrait-container {
+            width: 100%;
+            height: 280px;
+            border: 6px solid #5a3a1a;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .portrait-placeholder {
+            text-align: center;
+            color: #ecf0f1;
+        }
+
+        .portrait-emoji {
+            font-size: 100px;
+            margin-bottom: 10px;
+            display: block;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .portrait-text {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Character Name */
+        .character-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #5a3a1a;
+            text-align: center;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Bounty Amount */
+        .bounty-amount {
+            font-family: 'Pirata One', cursive;
+            font-size: 2rem;
+            color: #8B0000;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Role/Title */
+        .character-role {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: #8B4513;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        /* Dead or Alive Badge */
+        .status-badge {
+            background: #8B0000;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px auto;
+            max-width: 200px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        /* Decorative Elements */
+        .poster-decoration {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 3px solid #DAA520;
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        .decoration-tl {
+            top: -5px;
+            left: -5px;
+        }
+
+        .decoration-tr {
+            top: -5px;
+            right: -5px;
+        }
+
+        .decoration-bl {
+            bottom: -5px;
+            left: -5px;
+        }
+
+        .decoration-br {
+            bottom: -5px;
+            right: -5px;
+        }
+
+        /* Character Specific Styles */
+        .zoro-poster .portrait-container {
+            background: linear-gradient(135deg, #2d5016, #4a7c2f);
+        }
+
+        .nami-poster .portrait-container {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+        }
+
+        .usopp-poster .portrait-container {
+            background: linear-gradient(135deg, #8b6f47, #d4a574);
+        }
+
+        .sanji-poster .portrait-container {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+        }
+
+        .chopper-poster .portrait-container {
+            background: linear-gradient(135deg, #ff6b9d, #ffa8c5);
+        }
+
+        .robin-poster .portrait-container {
+            background: linear-gradient(135deg, #6a0572, #ab83a1);
+        }
+
+        .franky-poster .portrait-container {
+            background: linear-gradient(135deg, #0f4c75, #3282b8);
+        }
+
+        .brook-poster .portrait-container {
+            background: linear-gradient(135deg, #2d2d2d, #4a4a4a);
+        }
+
+        .jinbe-poster .portrait-container {
+            background: linear-gradient(135deg, #006994, #4682B4);
+        }
+
+        .shanks-poster .portrait-container {
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+        }
+
+        .ace-poster .portrait-container {
+            background: linear-gradient(135deg, #ff4500, #ff8c00);
+        }
+
+        .law-poster .portrait-container {
+            background: linear-gradient(135deg, #1a1a1a, #4a4a4a);
+        }
+
+        .sabo-poster .portrait-container {
+            background: linear-gradient(135deg, #ff6b35, #ffa500);
+        }
+
+        .crocodile-poster .portrait-container {
+            background: linear-gradient(135deg, #c2b280, #e6d7a3);
+        }
+
+        .doflamingo-poster .portrait-container {
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+        }
+
+        .kaido-poster .portrait-container {
+            background: linear-gradient(135deg, #4b0082, #8a2be2);
+        }
+
+        .bigmom-poster .portrait-container {
+            background: linear-gradient(135deg, #ff1493, #ffd700);
+        }
+
+        /* Instructions */
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #FFD700;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            color: #f4e8d0;
+        }
+
+        .instructions h2 {
+            font-family: 'Cinzel', serif;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .instructions ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .instructions code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #FFD700;
+        }
+
+        /* Print Button */
+        .print-button {
+            background: linear-gradient(145deg, #FFD700, #DAA520);
+            border: 3px solid #8B4513;
+            color: #5a3a1a;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s ease;
+            font-family: 'Cinzel', serif;
+        }
+
+        .print-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .instructions,
+            .print-button,
+            h1,
+            .subtitle {
+                display: none;
+            }
+
+            .wanted-poster {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>⚓ Generador de Carteles Wanted ⚓</h1>
+        <p class="subtitle">Carteles de "Se Busca" estilo One Piece</p>
+
+        <button class="print-button" onclick="window.print()">🖨️ Imprimir Todos los Carteles</button>
+
+        <div class="posters-grid">
+            <!-- Roronoa Zoro -->
+            <div class="wanted-poster zoro-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">⚔️</span>
+                        <div class="portrait-text">Roronoa Zoro</div>
+                    </div>
+                </div>
+                <div class="character-name">Roronoa Zoro</div>
+                <div class="bounty-amount">₿ 1,111,000,000</div>
+                <div class="character-role">Espadachín de los Piratas del Sombrero de Paja</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Nami -->
+            <div class="wanted-poster nami-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">🗺️</span>
+                        <div class="portrait-text">Nami</div>
+                    </div>
+                </div>
+                <div class="character-name">Nami</div>
+                <div class="bounty-amount">₿ 366,000,000</div>
+                <div class="character-role">Navegante de los Piratas del Sombrero de Paja</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Usopp -->
+            <div class="wanted-poster usopp-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">🎯</span>
+                        <div class="portrait-text">Usopp</div>
+                    </div>
+                </div>
+                <div class="character-name">God Usopp</div>
+                <div class="bounty-amount">₿ 500,000,000</div>
+                <div class="character-role">Francotirador de los Piratas del Sombrero de Paja</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Sanji -->
+            <div class="wanted-poster sanji-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">🍳</span>
+                        <div class="portrait-text">Sanji</div>
+                    </div>
+                </div>
+                <div class="character-name">Sanji</div>
+                <div class="bounty-amount">₿ 1,032,000,000</div>
+                <div class="character-role">Cocinero de los Piratas del Sombrero de Paja</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Tony Tony Chopper -->
+            <div class="wanted-poster chopper-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">🦌</span>
+                        <div class="portrait-text">Tony Tony Chopper</div>
+                    </div>
+                </div>
+                <div class="character-name">Tony Tony Chopper</div>
+                <div class="bounty-amount">₿ 1,000</div>
+                <div class="character-role">Doctor de los Piratas del Sombrero de Paja</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Nico Robin -->
+            <div class="wanted-poster robin-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">📚</span>
+                        <div class="portrait-text">Nico Robin</div>
+                    </div>
+                </div>
+                <div class="character-name">Nico Robin</div>
+                <div class="bounty-amount">₿ 930,000,000</div>
+                <div class="character-role">Arqueóloga de los Piratas del Sombrero de Paja</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Franky -->
+            <div class="wanted-poster franky-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">🔧</span>
+                        <div class="portrait-text">Franky</div>
+                    </div>
+                </div>
+                <div class="character-name">Franky</div>
+                <div class="bounty-amount">₿ 394,000,000</div>
+                <div class="character-role">Carpintero de los Piratas del Sombrero de Paja</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Brook -->
+            <div class="wanted-poster brook-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">🎵</span>
+                        <div class="portrait-text">Brook</div>
+                    </div>
+                </div>
+                <div class="character-name">Brook</div>
+                <div class="bounty-amount">₿ 383,000,000</div>
+                <div class="character-role">Músico de los Piratas del Sombrero de Paja</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Jinbe -->
+            <div class="wanted-poster jinbe-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">🦈</span>
+                        <div class="portrait-text">Jinbe</div>
+                    </div>
+                </div>
+                <div class="character-name">Jinbe</div>
+                <div class="bounty-amount">₿ 1,100,000,000</div>
+                <div class="character-role">Timonel de los Piratas del Sombrero de Paja</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Shanks -->
+            <div class="wanted-poster shanks-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">👑</span>
+                        <div class="portrait-text">Shanks</div>
+                    </div>
+                </div>
+                <div class="character-name">Shanks</div>
+                <div class="bounty-amount">₿ 4,048,900,000</div>
+                <div class="character-role">Capitán de los Piratas del Pelo Rojo - Yonko</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Portgas D. Ace -->
+            <div class="wanted-poster ace-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">🔥</span>
+                        <div class="portrait-text">Portgas D. Ace</div>
+                    </div>
+                </div>
+                <div class="character-name">Portgas D. Ace</div>
+                <div class="bounty-amount">₿ 550,000,000</div>
+                <div class="character-role">Comandante 2da División - Piratas de Barba Blanca</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Trafalgar Law -->
+            <div class="wanted-poster law-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">💀</span>
+                        <div class="portrait-text">Trafalgar Law</div>
+                    </div>
+                </div>
+                <div class="character-name">Trafalgar D. Water Law</div>
+                <div class="bounty-amount">₿ 3,000,000,000</div>
+                <div class="character-role">Capitán de los Piratas Heart</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Sabo -->
+            <div class="wanted-poster sabo-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">🔥</span>
+                        <div class="portrait-text">Sabo</div>
+                    </div>
+                </div>
+                <div class="character-name">Sabo</div>
+                <div class="bounty-amount">₿ 602,000,000</div>
+                <div class="character-role">Jefe de Estado Mayor - Ejército Revolucionario</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Crocodile -->
+            <div class="wanted-poster crocodile-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">🏜️</span>
+                        <div class="portrait-text">Crocodile</div>
+                    </div>
+                </div>
+                <div class="character-name">Crocodile</div>
+                <div class="bounty-amount">₿ 1,965,000,000</div>
+                <div class="character-role">Ex-Shichibukai - Líder de Baroque Works</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Donquixote Doflamingo -->
+            <div class="wanted-poster doflamingo-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">🕶️</span>
+                        <div class="portrait-text">Doflamingo</div>
+                    </div>
+                </div>
+                <div class="character-name">Donquixote Doflamingo</div>
+                <div class="bounty-amount">₿ 340,000,000</div>
+                <div class="character-role">Ex-Shichibukai - Rey de Dressrosa</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Kaido -->
+            <div class="wanted-poster kaido-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">🐉</span>
+                        <div class="portrait-text">Kaido</div>
+                    </div>
+                </div>
+                <div class="character-name">Kaido</div>
+                <div class="bounty-amount">₿ 4,611,100,000</div>
+                <div class="character-role">Ex-Yonko - Capitán de los Piratas de las Bestias</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Big Mom -->
+            <div class="wanted-poster bigmom-poster">
+                <div class="poster-decoration decoration-tl"></div>
+                <div class="poster-decoration decoration-tr"></div>
+                <div class="poster-decoration decoration-bl"></div>
+                <div class="poster-decoration decoration-br"></div>
+
+                <div class="wanted-header">WANTED</div>
+                <div class="portrait-container">
+                    <div class="portrait-placeholder">
+                        <span class="portrait-emoji">👸</span>
+                        <div class="portrait-text">Big Mom</div>
+                    </div>
+                </div>
+                <div class="character-name">Charlotte Linlin</div>
+                <div class="bounty-amount">₿ 4,388,000,000</div>
+                <div class="character-role">Ex-Yonko - Capitana de los Piratas de Big Mom</div>
+                <div class="status-badge">DEAD OR ALIVE</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Instrucciones de Uso</h2>
+            <ul>
+                <li><strong>Imprimir:</strong> Haz clic en el botón "Imprimir Todos los Carteles" para imprimir todos
+                    los diseños</li>
+                <li><strong>Guardar como PDF:</strong> Al imprimir, selecciona "Guardar como PDF" en tu impresora</li>
+                <li><strong>Personalizar:</strong> Puedes editar el HTML para cambiar nombres, recompensas o roles</li>
+                <li><strong>Añadir Imágenes:</strong> Reemplaza el contenido de <code>.portrait-placeholder</code> con
+                    una etiqueta <code>&lt;img&gt;</code></li>
+                <li><strong>Colores Personalizados:</strong> Cada cartel tiene su propia clase CSS (ej:
+                    <code>.zoro-poster</code>) que puedes modificar</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

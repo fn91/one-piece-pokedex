@@ -1,0 +1,897 @@
+/* ============================================
+   ONE PIECE POKÉDEX - DESIGN SYSTEM
+   ============================================ */
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Cinzel:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* ============================================
+   CSS VARIABLES - DESIGN TOKENS
+   ============================================ */
+:root {
+  /* Color Palette - Pirate Theme */
+  --color-wood-dark: #5a3a1a;
+  --color-wood-medium: #8B4513;
+  --color-wood-light: #D2691E;
+  --color-navy-dark: #1a2332;
+  --color-navy-medium: #2c3e50;
+  --color-navy-light: #34495e;
+  --color-gold: #FFD700;
+  --color-gold-dark: #DAA520;
+  --color-ocean-blue: #006994;
+  --color-ocean-light: #4682B4;
+  --color-parchment: #f4e8d0;
+  --color-parchment-dark: #e8d7b8;
+  --color-red-wanted: #8B0000;
+  --color-red-bright: #DC143C;
+  --color-white: #ffffff;
+  --color-black: #0a0a0a;
+
+  /* Devil Fruit Type Colors */
+  --color-paramecia: #9b59b6;
+  --color-zoan: #e67e22;
+  --color-logia: #3498db;
+
+  /* Typography */
+  --font-pirate: 'Pirata One', cursive;
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Roboto', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.3);
+  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-ocean-blue) 100%);
+  color: var(--color-white);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated background waves */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(70, 130, 180, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================
+   MAIN CONTAINER
+   ============================================ */
+.app-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+/* ============================================
+   POKÉDEX DEVICE
+   ============================================ */
+.pokedex-device {
+  background: linear-gradient(145deg, var(--color-wood-medium), var(--color-wood-dark));
+  border: 8px solid var(--color-gold-dark);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl), inset 0 0 20px rgba(0, 0, 0, 0.3);
+  padding: var(--spacing-lg);
+  position: relative;
+  overflow: hidden;
+  animation: deviceEntrance 0.8s ease-out;
+}
+
+@keyframes deviceEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.9) rotateX(20deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg);
+  }
+}
+
+/* Decorative compass corners */
+.pokedex-device::before,
+.pokedex-device::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, var(--color-gold) 30%, transparent 70%);
+  border: 3px solid var(--color-gold-dark);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.pokedex-device::before {
+  top: -10px;
+  left: -10px;
+}
+
+.pokedex-device::after {
+  bottom: -10px;
+  right: -10px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.pokedex-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 3px solid var(--color-gold);
+  position: relative;
+}
+
+.pokedex-title {
+  font-family: var(--font-pirate);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--color-gold);
+  text-shadow:
+    3px 3px 0 var(--color-wood-dark),
+    -1px -1px 0 var(--color-gold-dark),
+    0 0 20px rgba(255, 215, 0, 0.5);
+  letter-spacing: 2px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.pokedex-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-parchment);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ============================================
+   NAVIGATION TABS
+   ============================================ */
+.nav-tabs {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-tab {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: linear-gradient(145deg, var(--color-wood-light), var(--color-wood-medium));
+  border: 3px solid var(--color-gold-dark);
+  border-radius: var(--radius-md);
+  color: var(--color-parchment);
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-tab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+  transition: left var(--transition-medium);
+}
+
+.nav-tab:hover::before {
+  left: 100%;
+}
+
+.nav-tab:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gold);
+}
+
+.nav-tab.active {
+  background: linear-gradient(145deg, var(--color-gold), var(--color-gold-dark));
+  color: var(--color-wood-dark);
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* ============================================
+   SEARCH & FILTERS
+   ============================================ */
+.search-container {
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 250px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background: var(--color-parchment);
+  border: 3px solid var(--color-wood-medium);
+  border-radius: var(--radius-md);
+  color: var(--color-wood-dark);
+  transition: all var(--transition-fast);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.filter-select {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background: var(--color-parchment);
+  border: 3px solid var(--color-wood-medium);
+  border-radius: var(--radius-md);
+  color: var(--color-wood-dark);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--color-gold);
+}
+
+/* ============================================
+   CHARACTER GRID
+   ============================================ */
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ============================================
+   CHARACTER CARD - WANTED POSTER STYLE
+   ============================================ */
+.character-card {
+  background: linear-gradient(145deg, var(--color-parchment), var(--color-parchment-dark));
+  border: 6px solid var(--color-wood-dark);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.character-card::before {
+  content: 'WANTED';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-pirate);
+  font-size: 1.8rem;
+  color: var(--color-red-wanted);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.character-card:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-red-wanted);
+}
+
+.character-image-container {
+  width: 100%;
+  height: 250px;
+  margin-top: 40px;
+  margin-bottom: var(--spacing-sm);
+  border: 4px solid var(--color-wood-dark);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--color-navy-light);
+}
+
+.character-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+
+.character-card:hover .character-image {
+  transform: scale(1.05);
+}
+
+.character-name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-wood-dark);
+  text-align: center;
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+}
+
+.character-bounty {
+  font-family: var(--font-pirate);
+  font-size: 1.3rem;
+  color: var(--color-red-wanted);
+  text-align: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.character-role {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-wood-medium);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ============================================
+   CHARACTER-SPECIFIC POSTER DESIGNS
+   ============================================ */
+
+/* Decorative corner elements for character cards */
+.character-card::after {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border: 3px solid var(--color-gold-dark);
+  border-radius: 50%;
+  opacity: 0.3;
+  bottom: 10px;
+  right: 10px;
+  z-index: 0;
+}
+
+/* Luffy - Red/Straw Hat theme */
+.character-card[data-character="luffy"] .character-image-container,
+.character-card[data-character="Monkey D. Luffy"] .character-image-container {
+  background: linear-gradient(135deg, #8B0000, #DC143C);
+}
+
+/* Zoro - Green/Swords theme */
+.character-card[data-character="zoro"] .character-image-container,
+.character-card[data-character="Roronoa Zoro"] .character-image-container {
+  background: linear-gradient(135deg, #2d5016, #4a7c2f);
+}
+
+/* Nami - Orange/Navigator theme */
+.character-card[data-character="nami"] .character-image-container,
+.character-card[data-character="Nami"] .character-image-container {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+}
+
+/* Usopp - Brown/Sniper theme */
+.character-card[data-character="usopp"] .character-image-container,
+.character-card[data-character="Usopp"] .character-image-container {
+  background: linear-gradient(135deg, #8b6f47, #d4a574);
+}
+
+/* Sanji - Blue/Black theme */
+.character-card[data-character="sanji"] .character-image-container,
+.character-card[data-character="Sanji"] .character-image-container {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+/* Chopper - Pink/Cute theme */
+.character-card[data-character="chopper"] .character-image-container,
+.character-card[data-character="Tony Tony Chopper"] .character-image-container {
+  background: linear-gradient(135deg, #ff6b9d, #ffa8c5);
+}
+
+/* Robin - Purple/Mystery theme */
+.character-card[data-character="robin"] .character-image-container,
+.character-card[data-character="Nico Robin"] .character-image-container {
+  background: linear-gradient(135deg, #6a0572, #ab83a1);
+}
+
+/* Franky - Blue/Tech theme */
+.character-card[data-character="franky"] .character-image-container,
+.character-card[data-character="Franky"] .character-image-container {
+  background: linear-gradient(135deg, #0f4c75, #3282b8);
+}
+
+/* Brook - Gray/Skeleton theme */
+.character-card[data-character="brook"] .character-image-container,
+.character-card[data-character="Brook"] .character-image-container {
+  background: linear-gradient(135deg, #2d2d2d, #4a4a4a);
+}
+
+/* Jinbe - Ocean Blue theme */
+.character-card[data-character="jinbe"] .character-image-container,
+.character-card[data-character="Jinbe"] .character-image-container {
+  background: linear-gradient(135deg, #006994, #4682B4);
+}
+
+/* Shanks - Red Hair theme */
+.character-card[data-character="shanks"] .character-image-container,
+.character-card[data-character="Shanks"] .character-image-container {
+  background: linear-gradient(135deg, #8B0000, #DC143C);
+}
+
+/* Ace - Fire theme */
+.character-card[data-character="ace"] .character-image-container,
+.character-card[data-character="Portgas D. Ace"] .character-image-container {
+  background: linear-gradient(135deg, #ff4500, #ff8c00);
+}
+
+/* Law - Dark/Death theme */
+.character-card[data-character="law"] .character-image-container,
+.character-card[data-character="Trafalgar D. Water Law"] .character-image-container {
+  background: linear-gradient(135deg, #1a1a1a, #4a4a4a);
+}
+
+/* Sabo - Fire/Revolution theme */
+.character-card[data-character="sabo"] .character-image-container,
+.character-card[data-character="Sabo"] .character-image-container {
+  background: linear-gradient(135deg, #ff6b35, #ffa500);
+}
+
+/* Crocodile - Sand/Desert theme */
+.character-card[data-character="crocodile"] .character-image-container,
+.character-card[data-character="Crocodile"] .character-image-container {
+  background: linear-gradient(135deg, #c2b280, #e6d7a3);
+}
+
+/* Doflamingo - Pink/Flamingo theme */
+.character-card[data-character="doflamingo"] .character-image-container,
+.character-card[data-character="Donquixote Doflamingo"] .character-image-container {
+  background: linear-gradient(135deg, #ff1493, #ff69b4);
+}
+
+/* Kaido - Purple/Dragon theme */
+.character-card[data-character="kaido"] .character-image-container,
+.character-card[data-character="Kaido"] .character-image-container {
+  background: linear-gradient(135deg, #4b0082, #8a2be2);
+}
+
+/* Big Mom - Pink/Gold theme */
+.character-card[data-character="bigmom"] .character-image-container,
+.character-card[data-character="Charlotte Linlin (Big Mom)"] .character-image-container {
+  background: linear-gradient(135deg, #ff1493, #ffd700);
+}
+
+/* Dead or Alive badge (optional enhancement) */
+.character-card .status-badge {
+  background: var(--color-red-wanted);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-align: center;
+  margin: 8px auto 0;
+  max-width: 150px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  display: none;
+  /* Hidden by default, can be enabled */
+}
+
+/* ============================================
+   DEVIL FRUIT CARD
+   ============================================ */
+.devil-fruit-card {
+  background: linear-gradient(145deg, var(--color-navy-medium), var(--color-navy-dark));
+  border: 4px solid var(--color-gold-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.devil-fruit-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+  transition: transform var(--transition-slow);
+}
+
+.devil-fruit-card:hover::before {
+  transform: rotate(180deg);
+}
+
+.devil-fruit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-gold);
+}
+
+.fruit-type-badge {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.fruit-type-badge.paramecia {
+  background: var(--color-paramecia);
+  color: var(--color-white);
+}
+
+.fruit-type-badge.zoan {
+  background: var(--color-zoan);
+  color: var(--color-white);
+}
+
+.fruit-type-badge.logia {
+  background: var(--color-logia);
+  color: var(--color-white);
+}
+
+.fruit-image-container {
+  width: 100%;
+  height: 200px;
+  margin-bottom: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.fruit-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--spacing-sm);
+}
+
+.fruit-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  margin-bottom: var(--spacing-xs);
+}
+
+.fruit-user {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-parchment);
+  font-style: italic;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ============================================
+   MODAL
+   ============================================ */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  animation: fadeIn var(--transition-medium);
+}
+
+.modal.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: linear-gradient(145deg, var(--color-parchment), var(--color-parchment-dark));
+  border: 8px solid var(--color-wood-dark);
+  border-radius: var(--radius-xl);
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: var(--spacing-xl);
+  position: relative;
+  animation: slideUp var(--transition-medium);
+  box-shadow: var(--shadow-xl);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  width: 40px;
+  height: 40px;
+  background: var(--color-red-wanted);
+  border: 3px solid var(--color-wood-dark);
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+  background: var(--color-red-bright);
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 3px solid var(--color-wood-dark);
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-wood-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.modal-body {
+  color: var(--color-wood-dark);
+}
+
+.detail-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.detail-label {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-red-wanted);
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+}
+
+.detail-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-wood-dark);
+}
+
+.abilities-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.abilities-list li {
+  padding: var(--spacing-xs) 0;
+  padding-left: var(--spacing-md);
+  position: relative;
+}
+
+.abilities-list li::before {
+  content: '⚔';
+  position: absolute;
+  left: 0;
+  color: var(--color-red-wanted);
+}
+
+/* ============================================
+   GRAND LINE MODE
+   ============================================ */
+.island-selector {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.island-btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  background: var(--color-ocean-blue);
+  border: 3px solid var(--color-gold-dark);
+  border-radius: var(--radius-md);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-sm);
+}
+
+.island-btn:hover {
+  background: var(--color-ocean-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.island-btn.active {
+  background: var(--color-gold);
+  color: var(--color-wood-dark);
+  border-color: var(--color-gold);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.hidden {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-sm {
+  margin-bottom: var(--spacing-sm);
+}
+
+.mb-md {
+  margin-bottom: var(--spacing-md);
+}
+
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .app-container {
+    padding: var(--spacing-sm);
+  }
+
+  .pokedex-device {
+    padding: var(--spacing-md);
+  }
+
+  .pokedex-title {
+    font-size: 2rem;
+  }
+
+  .character-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .modal-content {
+    padding: var(--spacing-lg);
+  }
+
+  .nav-tabs {
+    gap: var(--spacing-xs);
+  }
+
+  .nav-tab {
+    font-size: 0.9rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .character-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  .search-input {
+    min-width: 100%;
+  }
+}
+
+/* ============================================
+   LOADING ANIMATION
+   ============================================ */
+.loading {
+  text-align: center;
+  padding: var(--spacing-xl);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--color-gold);
+}
+
+.loading::after {
+  content: '...';
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+
+  0%,
+  20% {
+    content: '.';
+  }
+
+  40% {
+    content: '..';
+  }
+
+  60%,
+  100% {
+    content: '...';
+  }
+}

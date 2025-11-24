@@ -1,0 +1,227 @@
+[
+    {
+        "id": 1,
+        "name": "Gomu Gomu no Mi (Hito Hito no Mi, Model: Nika)",
+        "type": "Paramecia/Mythical Zoan",
+        "currentUser": "Monkey D. Luffy",
+        "abilities": "Grants the user's body the properties of rubber, allowing them to stretch, bounce, and be immune to blunt attacks and electricity. Awakened form (Gear Fifth) allows reality-warping abilities and brings joy and freedom.",
+        "strengths": [
+            "Immunity to blunt force attacks",
+            "Immunity to electricity",
+            "Extreme versatility in combat",
+            "Awakening grants near-limitless creativity",
+            "Enhanced physical abilities in Gear forms"
+        ],
+        "weaknesses": [
+            "Vulnerable to cutting and piercing attacks",
+            "Standard Devil Fruit weakness to seawater",
+            "Gear forms can cause physical strain",
+            "Requires creativity to maximize potential"
+        ],
+        "description": "Originally thought to be the Gomu Gomu no Mi (Rubber-Rubber Fruit), it was revealed to be the mythical Hito Hito no Mi, Model: Nika. This legendary fruit grants the powers of the Sun God Nika, bringing liberation and joy. It is one of the most sought-after Devil Fruits by the World Government.",
+        "image": "gomu-gomu.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Hito Hito no Mi",
+        "type": "Zoan",
+        "currentUser": "Tony Tony Chopper",
+        "abilities": "Allows an animal to transform into a human hybrid and full human form, granting human intelligence and abilities.",
+        "strengths": [
+            "Grants human-level intelligence to animals",
+            "Multiple transformation points",
+            "Enhanced physical abilities in hybrid form",
+            "Ability to communicate with humans"
+        ],
+        "weaknesses": [
+            "Standard Devil Fruit weakness to seawater",
+            "Limited combat advantage for humans",
+            "Rumble Ball dependency for extra forms"
+        ],
+        "description": "A Zoan-type Devil Fruit that allows the user to transform into a human. When eaten by an animal like Chopper, it grants human intelligence, speech, and the ability to walk upright. Chopper has developed multiple transformation points using the Rumble Ball.",
+        "image": "hito-hito.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Hana Hana no Mi",
+        "type": "Paramecia",
+        "currentUser": "Nico Robin",
+        "abilities": "Allows the user to sprout duplicates of their body parts on any surface within range, including living beings and objects.",
+        "strengths": [
+            "Extreme versatility in combat and utility",
+            "Can create massive limbs (Gigante Fleur)",
+            "Demonio Fleur form for enhanced power",
+            "Excellent for espionage and information gathering",
+            "Can restrain multiple opponents"
+        ],
+        "weaknesses": [
+            "Damage to sprouted parts is felt by the user",
+            "Standard Devil Fruit weakness to seawater",
+            "Requires concentration for complex formations",
+            "Limited by user's physical stamina"
+        ],
+        "description": "The Flower-Flower Fruit allows Robin to sprout parts of her body anywhere within her range. She can create eyes and ears for spying, hands for grabbing, or even giant limbs for powerful attacks. Her awakened Demonio Fleur form grants her even greater power.",
+        "image": "hana-hana.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Yomi Yomi no Mi",
+        "type": "Paramecia",
+        "currentUser": "Brook",
+        "abilities": "Grants the user a second life after death, allowing their soul to return to their body. Also grants soul-based powers.",
+        "strengths": [
+            "Resurrection after death (one time)",
+            "Soul manipulation abilities",
+            "Astral projection",
+            "Ice-based attacks (Soul Solid)",
+            "Immunity to soul-stealing attacks"
+        ],
+        "weaknesses": [
+            "Resurrection only works once",
+            "Standard Devil Fruit weakness to seawater",
+            "Soul must find body after death",
+            "Limited offensive power without training"
+        ],
+        "description": "The Revive-Revive Fruit grants the user a second chance at life. After Brook died, his soul wandered for a year before finding his body, which had already decomposed to bones. He later learned to use his soul energy for attacks and can even leave his body temporarily.",
+        "image": "yomi-yomi.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Mera Mera no Mi",
+        "type": "Logia",
+        "currentUser": "Sabo",
+        "abilities": "Allows the user to create, control, and transform into fire at will.",
+        "strengths": [
+            "Logia intangibility",
+            "Powerful fire-based attacks",
+            "Flight capability",
+            "Can create walls of fire",
+            "Effective against most opponents"
+        ],
+        "weaknesses": [
+            "Vulnerable to magma (superior element)",
+            "Standard Devil Fruit weakness to seawater",
+            "Can be countered by Haki users",
+            "Water-based attacks are problematic"
+        ],
+        "description": "The Flame-Flame Fruit is a powerful Logia-type that grants complete control over fire. Originally eaten by Portgas D. Ace, it was later inherited by Sabo after Ace's death. The fruit allows devastating fire attacks and Logia-type intangibility.",
+        "image": "mera-mera.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Ope Ope no Mi",
+        "type": "Paramecia",
+        "currentUser": "Trafalgar D. Water Law",
+        "abilities": "Allows the user to create a spherical territory (Room) where they can manipulate anything, including spatial positioning, object properties, and even personalities.",
+        "strengths": [
+            "Spatial manipulation within Room",
+            "Can perform instant surgery",
+            "Shambles teleportation",
+            "Can grant immortality (at cost of user's life)",
+            "Awakening allows internal damage",
+            "Extremely versatile"
+        ],
+        "weaknesses": [
+            "Drains stamina significantly",
+            "Room has size limitations",
+            "Standard Devil Fruit weakness to seawater",
+            "Requires surgical knowledge for full potential",
+            "Immortality surgery kills the user"
+        ],
+        "description": "The Op-Op Fruit is considered the 'Ultimate Devil Fruit' due to its ability to grant immortality through a special surgery. Law uses it to create Rooms where he can manipulate space, switch objects, and perform miraculous medical procedures. It's worth 5 billion berries on the black market.",
+        "image": "ope-ope.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Suna Suna no Mi",
+        "type": "Logia",
+        "currentUser": "Crocodile",
+        "abilities": "Allows the user to create, control, and transform into sand at will.",
+        "strengths": [
+            "Logia intangibility",
+            "Can create sandstorms",
+            "Moisture absorption ability",
+            "Can turn surroundings into sand",
+            "Effective in desert environments",
+            "Can create quicksand"
+        ],
+        "weaknesses": [
+            "Vulnerable to water and liquids",
+            "Standard Devil Fruit weakness to seawater",
+            "Can be countered by Haki users",
+            "Less effective in humid environments"
+        ],
+        "description": "The Sand-Sand Fruit grants the user complete control over sand. Crocodile can transform into sand to avoid attacks, create massive sandstorms, and absorb moisture from anything he touches. Water is his primary weakness, as it solidifies the sand.",
+        "image": "suna-suna.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Ito Ito no Mi",
+        "type": "Paramecia",
+        "currentUser": "Donquixote Doflamingo",
+        "abilities": "Allows the user to create and manipulate strings that can be used for cutting, controlling people, or creating clones.",
+        "strengths": [
+            "Extremely versatile strings",
+            "Can control people like puppets (Parasite)",
+            "Can create string clones",
+            "Awakening allows environment conversion",
+            "Birdcage ultimate technique",
+            "Strings can be nearly invisible"
+        ],
+        "weaknesses": [
+            "Standard Devil Fruit weakness to seawater",
+            "Strings can be cut by strong attacks",
+            "Requires concentration for complex techniques",
+            "Awakening drains stamina"
+        ],
+        "description": "The String-String Fruit allows Doflamingo to create and control razor-sharp strings. He can use them to control people, create clones, fly by attaching strings to clouds, and even repair internal organs. His awakening allows him to turn his surroundings into strings.",
+        "image": "ito-ito.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Uo Uo no Mi, Model: Seiryu",
+        "type": "Mythical Zoan",
+        "currentUser": "Kaido",
+        "abilities": "Allows the user to transform into an Azure Dragon, granting flight, flame breath, lightning generation, and immense physical power.",
+        "strengths": [
+            "Massive size and strength in dragon form",
+            "Flight via flame clouds",
+            "Devastating Blast Breath attack",
+            "Lightning generation",
+            "Enhanced durability",
+            "Hybrid form combines power and mobility"
+        ],
+        "weaknesses": [
+            "Large size makes an easy target",
+            "Standard Devil Fruit weakness to seawater",
+            "Can be countered by advanced Haki",
+            "Transformation drains energy"
+        ],
+        "description": "A Mythical Zoan fruit that allows transformation into an Azure Dragon, one of the rarest and most powerful Devil Fruits. Kaido uses it to create devastating attacks and fly using flame clouds. The dragon form grants immense power and various elemental abilities.",
+        "image": "uo-uo-seiryu.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Soru Soru no Mi",
+        "type": "Paramecia",
+        "currentUser": "Charlotte Linlin (Big Mom)",
+        "abilities": "Allows the user to interact with and manipulate souls, including extracting them from people and placing them into objects or animals to create homies.",
+        "strengths": [
+            "Can extract souls from fearful people",
+            "Create powerful homies",
+            "Can use own soul for power boosts",
+            "Special homies (Zeus, Prometheus, Hera) are extremely powerful",
+            "Can steal lifespan",
+            "Soul-based attacks"
+        ],
+        "weaknesses": [
+            "Cannot extract souls from fearless people",
+            "Standard Devil Fruit weakness to seawater",
+            "Homies can be destroyed",
+            "Requires fear to be most effective",
+            "Using own soul shortens lifespan"
+        ],
+        "description": "The Soul-Soul Fruit allows Big Mom to manipulate souls. She can extract souls from people who fear her, use fragments of her own soul to create powerful homies, and even steal years from people's lifespans. Her special homies Zeus, Prometheus, and Hera are incredibly powerful.",
+        "image": "soru-soru.jpg"
+    }
+]

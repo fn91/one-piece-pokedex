@@ -1,0 +1,328 @@
+[
+  {
+    "id": 1,
+    "name": "Monkey D. Luffy",
+    "bounty": "3,000,000,000",
+    "role": "Captain of the Straw Hat Pirates",
+    "devilFruit": "Gomu Gomu no Mi (Hito Hito no Mi, Model: Nika)",
+    "type": "Straw Hat",
+    "abilities": [
+      "Rubber body with extreme elasticity",
+      "Gear Second: Enhanced speed and power",
+      "Gear Third: Giant limb attacks",
+      "Gear Fourth: Boundman, Snakeman, Tankman forms",
+      "Gear Fifth: Awakened form with reality-warping abilities",
+      "Advanced Conqueror's Haki",
+      "Advanced Armament Haki",
+      "Observation Haki"
+    ],
+    "description": "The protagonist of One Piece and captain of the Straw Hat Pirates. Luffy dreams of becoming the Pirate King and finding the legendary treasure, One Piece. After eating the Gomu Gomu no Mi (later revealed to be the Hito Hito no Mi, Model: Nika), his body gained the properties of rubber. He is known for his unwavering determination, loyalty to his friends, and incredible fighting spirit.",
+    "image": "luffy.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Roronoa Zoro",
+    "bounty": "1,111,000,000",
+    "role": "Swordsman of the Straw Hat Pirates",
+    "devilFruit": "None",
+    "type": "Straw Hat",
+    "abilities": [
+      "Three-Sword Style (Santoryu)",
+      "Nine-Sword Style Asura",
+      "Advanced Armament Haki",
+      "Advanced Conqueror's Haki",
+      "Enma mastery",
+      "Superhuman strength and endurance"
+    ],
+    "description": "The first member to join Luffy's crew and the combatant of the Straw Hat Pirates. Zoro is a master swordsman who wields three swords simultaneously. His dream is to become the world's greatest swordsman. Despite his terrible sense of direction, he is incredibly loyal and one of the crew's strongest fighters.",
+    "image": "zoro.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Nami",
+    "bounty": "366,000,000",
+    "role": "Navigator of the Straw Hat Pirates",
+    "devilFruit": "None",
+    "type": "Straw Hat",
+    "abilities": [
+      "Expert navigation and cartography",
+      "Weather prediction and manipulation",
+      "Clima-Tact weapon mastery",
+      "Zeus (homie) partnership",
+      "Exceptional intelligence and cunning"
+    ],
+    "description": "The navigator of the Straw Hat Pirates with an exceptional ability to recognize and predict weather patterns. Nami dreams of drawing a complete map of the world. She wields the Clima-Tact, a weapon that allows her to manipulate weather, and later partners with Zeus, a thundercloud homie.",
+    "image": "nami.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Usopp",
+    "bounty": "500,000,000",
+    "role": "Sniper of the Straw Hat Pirates",
+    "devilFruit": "None",
+    "type": "Straw Hat",
+    "abilities": [
+      "Exceptional marksmanship",
+      "Observation Haki",
+      "Kabuto slingshot mastery",
+      "Pop Green ammunition",
+      "Inventive engineering skills"
+    ],
+    "description": "The sniper of the Straw Hat Pirates and a compulsive liar who dreams of becoming a brave warrior of the sea. Despite his cowardly nature, Usopp has proven himself in crucial moments. He is an exceptional marksman and inventor, creating unique ammunition and weapons for the crew.",
+    "image": "usopp.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Sanji",
+    "bounty": "1,032,000,000",
+    "role": "Cook of the Straw Hat Pirates",
+    "devilFruit": "None",
+    "type": "Straw Hat",
+    "abilities": [
+      "Black Leg Style martial arts",
+      "Diable Jambe: Flaming kicks",
+      "Ifrit Jambe: Blue flames",
+      "Sky Walk",
+      "Observation Haki",
+      "Armament Haki",
+      "Germa 66 genetic enhancements"
+    ],
+    "description": "The cook of the Straw Hat Pirates who fights using only his legs to preserve his hands for cooking. Sanji dreams of finding the All Blue, a legendary sea where all fish from every ocean gather. He is a master of the Black Leg Style and has a strict code of chivalry toward women.",
+    "image": "sanji.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Tony Tony Chopper",
+    "bounty": "1,000",
+    "role": "Doctor of the Straw Hat Pirates",
+    "devilFruit": "Hito Hito no Mi",
+    "type": "Straw Hat",
+    "abilities": [
+      "Human intelligence and speech",
+      "Multiple transformation points",
+      "Monster Point",
+      "Medical expertise",
+      "Rumble Ball enhancement"
+    ],
+    "description": "A reindeer who ate the Hito Hito no Mi, gaining human intelligence and the ability to transform. Chopper is the crew's doctor and dreams of curing all diseases. Despite his adorable appearance and ridiculously low bounty (mistaken for a pet), he is a capable fighter with multiple transformation forms.",
+    "image": "chopper.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Nico Robin",
+    "bounty": "930,000,000",
+    "role": "Archaeologist of the Straw Hat Pirates",
+    "devilFruit": "Hana Hana no Mi",
+    "type": "Straw Hat",
+    "abilities": [
+      "Sprout body parts anywhere",
+      "Gigantic limb creation",
+      "Demonio Fleur form",
+      "Ancient language expertise",
+      "Armament Haki",
+      "Fish-Man Karate knowledge"
+    ],
+    "description": "The archaeologist of the Straw Hat Pirates who can sprout duplicates of her body parts on any surface. Robin is the only person alive who can read the ancient Poneglyphs. Her dream is to find the Rio Poneglyph and learn the true history of the world. She is calm, intelligent, and has a dark sense of humor.",
+    "image": "robin.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Franky",
+    "bounty": "394,000,000",
+    "role": "Shipwright of the Straw Hat Pirates",
+    "devilFruit": "None",
+    "type": "Straw Hat",
+    "abilities": [
+      "Cyborg body with weapons",
+      "Franky Shogun mecha",
+      "Radical Beam laser",
+      "Coup de Burst propulsion",
+      "Master shipwright skills",
+      "Cola-powered energy system"
+    ],
+    "description": "A cyborg and the shipwright of the Straw Hat Pirates. Franky rebuilt himself into a powerful cyborg after a near-fatal accident. He built the Thousand Sunny, the crew's ship, and dreams of building a ship that will sail around the world. He runs on cola and has a flamboyant, super personality.",
+    "image": "franky.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Brook",
+    "bounty": "383,000,000",
+    "role": "Musician of the Straw Hat Pirates",
+    "devilFruit": "Yomi Yomi no Mi",
+    "type": "Straw Hat",
+    "abilities": [
+      "Resurrection after death",
+      "Soul manipulation",
+      "Soul Solid ice attacks",
+      "Exceptional swordsmanship",
+      "Musical mastery",
+      "Astral projection"
+    ],
+    "description": "A living skeleton and the musician of the Straw Hat Pirates. Brook died and was revived by the Yomi Yomi no Mi, but his soul took so long to find his body that only his skeleton remained. He dreams of reuniting with Laboon, a whale he made a promise to 50 years ago. Despite being dead, he's full of life and terrible skeleton jokes.",
+    "image": "brook.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Jinbe",
+    "bounty": "1,100,000,000",
+    "role": "Helmsman of the Straw Hat Pirates",
+    "devilFruit": "None",
+    "type": "Straw Hat",
+    "abilities": [
+      "Fish-Man Karate master",
+      "Fish-Man Jujutsu",
+      "Water manipulation",
+      "Armament Haki",
+      "Observation Haki",
+      "Exceptional swimming ability"
+    ],
+    "description": "A whale shark fish-man and the helmsman of the Straw Hat Pirates. Jinbe is a master of Fish-Man Karate and former Warlord of the Sea. He dreams of fulfilling his former captain Fisher Tiger's dying wish of coexistence between fish-men and humans. He is wise, honorable, and incredibly powerful.",
+    "image": "jinbe.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Shanks",
+    "bounty": "4,048,900,000",
+    "role": "Captain of the Red Hair Pirates, Yonko",
+    "devilFruit": "None",
+    "type": "Ally",
+    "abilities": [
+      "Master swordsmanship",
+      "Supreme Conqueror's Haki",
+      "Advanced Armament Haki",
+      "Advanced Observation Haki",
+      "Haki capable of physical damage"
+    ],
+    "description": "One of the Four Emperors and Luffy's role model. Shanks inspired Luffy to become a pirate and gave him his signature straw hat. Despite losing his left arm saving young Luffy, he became one of the most powerful pirates in the world. He is charismatic, laid-back, but incredibly formidable when serious.",
+    "image": "shanks.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Portgas D. Ace",
+    "bounty": "550,000,000",
+    "role": "2nd Division Commander of Whitebeard Pirates",
+    "devilFruit": "Mera Mera no Mi",
+    "type": "Ally",
+    "abilities": [
+      "Fire creation and manipulation",
+      "Logia intangibility",
+      "Conqueror's Haki",
+      "Armament Haki",
+      "Observation Haki"
+    ],
+    "description": "Luffy's sworn older brother and the former 2nd Division Commander of the Whitebeard Pirates. Ace ate the Mera Mera no Mi, giving him the power to create and control fire. He was known for his loyalty, kindness, and powerful abilities. His death at Marineford became a pivotal moment in the series.",
+    "image": "ace.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Trafalgar D. Water Law",
+    "bounty": "3,000,000,000",
+    "role": "Captain of the Heart Pirates",
+    "devilFruit": "Ope Ope no Mi",
+    "type": "Ally",
+    "abilities": [
+      "Room creation and spatial manipulation",
+      "Object and personality switching",
+      "Shambles teleportation",
+      "Gamma Knife internal attacks",
+      "Awakened Devil Fruit powers",
+      "Master swordsmanship",
+      "Medical expertise"
+    ],
+    "description": "The captain of the Heart Pirates and a member of the Worst Generation. Law ate the Ope Ope no Mi, granting him the ability to create a spherical territory where he can manipulate anything. He formed an alliance with Luffy to take down Kaido. Law is calculating, strategic, and has a tragic past involving Doflamingo.",
+    "image": "law.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Sabo",
+    "bounty": "602,000,000",
+    "role": "Chief of Staff of the Revolutionary Army",
+    "devilFruit": "Mera Mera no Mi",
+    "type": "Ally",
+    "abilities": [
+      "Fire creation and manipulation",
+      "Dragon Claw Fist technique",
+      "Advanced Armament Haki",
+      "Advanced Observation Haki",
+      "Conqueror's Haki",
+      "Pipe fighting mastery"
+    ],
+    "description": "Luffy and Ace's sworn brother and the Chief of Staff of the Revolutionary Army. Presumed dead as a child, Sabo lost his memories until Ace's death triggered their return. He inherited Ace's Mera Mera no Mi and continues his will. Sabo is intelligent, powerful, and dedicated to overthrowing the World Government.",
+    "image": "sabo.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Crocodile",
+    "bounty": "1,965,000,000",
+    "role": "Former Warlord, Leader of Baroque Works",
+    "devilFruit": "Suna Suna no Mi",
+    "type": "Villain",
+    "abilities": [
+      "Sand creation and manipulation",
+      "Logia intangibility",
+      "Moisture absorption",
+      "Desert-based attacks",
+      "Poisonous hook",
+      "Strategic genius"
+    ],
+    "description": "A former Warlord of the Sea and the main antagonist of the Alabasta Arc. Crocodile ate the Suna Suna no Mi, becoming a sand human. He attempted to take over Alabasta using his criminal organization, Baroque Works. Despite his defeat by Luffy, he later helped during the Marineford War. He is cunning, ruthless, and ambitious.",
+    "image": "crocodile.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Donquixote Doflamingo",
+    "bounty": "340,000,000",
+    "role": "Former Warlord, King of Dressrosa",
+    "devilFruit": "Ito Ito no Mi",
+    "type": "Villain",
+    "abilities": [
+      "String creation and manipulation",
+      "Awakened Devil Fruit powers",
+      "Parasite control technique",
+      "Birdcage ultimate attack",
+      "Advanced Conqueror's Haki",
+      "Advanced Armament Haki",
+      "Advanced Observation Haki"
+    ],
+    "description": "A former Celestial Dragon, Warlord, and the king of Dressrosa. Doflamingo ate the Ito Ito no Mi, allowing him to create and control strings. He ran an underground weapons trade and controlled Dressrosa through deception. He is charismatic, sadistic, and one of the most dangerous villains Luffy has faced.",
+    "image": "doflamingo.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Kaido",
+    "bounty": "4,611,100,000",
+    "role": "Former Yonko, Captain of the Beasts Pirates",
+    "devilFruit": "Uo Uo no Mi, Model: Seiryu",
+    "type": "Villain",
+    "abilities": [
+      "Azure Dragon transformation",
+      "Flame clouds creation",
+      "Blast Breath attack",
+      "Supreme Conqueror's Haki",
+      "Advanced Armament Haki",
+      "Near-invulnerability",
+      "Immense physical strength"
+    ],
+    "description": "Known as the 'Strongest Creature in the World,' Kaido was one of the Four Emperors. He ate a Mythical Zoan fruit that allows him to transform into an Azure Dragon. Kaido sought to create the greatest war the world has ever seen. He was eventually defeated by Luffy in Wano. He is nearly indestructible and incredibly powerful.",
+    "image": "kaido.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Charlotte Linlin (Big Mom)",
+    "bounty": "4,388,000,000",
+    "role": "Former Yonko, Captain of Big Mom Pirates",
+    "devilFruit": "Soru Soru no Mi",
+    "type": "Villain",
+    "abilities": [
+      "Soul manipulation and extraction",
+      "Homie creation",
+      "Zeus, Prometheus, Hera control",
+      "Supreme Conqueror's Haki",
+      "Advanced Armament Haki",
+      "Steel-like skin",
+      "Immense physical strength"
+    ],
+    "description": "One of the Four Emperors and captain of the Big Mom Pirates. Big Mom ate the Soru Soru no Mi, allowing her to manipulate souls. She can extract souls from people and create homies (living objects). She rules over Totto Land and has an obsession with creating a utopia where all races can live together. She is terrifying, unpredictable, and immensely powerful.",
+    "image": "bigmom.jpg"
+  }
+]

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="One Piece Pokédex - A comprehensive catalog of characters and Devil Fruits from the One Piece universe">
+  <title>One Piece Pokédex - Grand Line Navigator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Main Pokédex Device -->
+    <div class="pokedex-device">
+      <!-- Header -->
+      <header class="pokedex-header">
+        <h1 class="pokedex-title">One Piece Pokédex</h1>
+        <p class="pokedex-subtitle">Grand Line Navigator & Character Catalog</p>
+      </header>
+
+      <!-- Navigation Tabs -->
+      <nav class="nav-tabs">
+        <button class="nav-tab active" data-view="characters">
+          ⚓ Characters
+        </button>
+        <button class="nav-tab" data-view="devil-fruits">
+          🍎 Devil Fruits
+        </button>
+        <button class="nav-tab" data-view="grand-line">
+          🗺️ Grand Line Mode
+        </button>
+      </nav>
+
+      <!-- Characters View -->
+      <div id="characters-view" class="view-container">
+        <!-- Search and Filters -->
+        <div class="search-container">
+          <input 
+            type="text" 
+            id="character-search" 
+            class="search-input" 
+            placeholder="Search characters by name..."
+          >
+          <select id="character-filter" class="filter-select">
+            <option value="all">All Characters</option>
+            <option value="Straw Hat">Straw Hat Pirates</option>
+            <option value="Ally">Allies</option>
+            <option value="Villain">Villains</option>
+          </select>
+        </div>
+
+        <!-- Character Grid -->
+        <div id="character-grid" class="character-grid">
+          <!-- Characters will be dynamically loaded here -->
+        </div>
+      </div>
+
+      <!-- Devil Fruits View -->
+      <div id="devil-fruits-view" class="view-container hidden">
+        <!-- Search and Filters -->
+        <div class="search-container">
+          <input 
+            type="text" 
+            id="fruit-search" 
+            class="search-input" 
+            placeholder="Search Devil Fruits..."
+          >
+          <select id="fruit-filter" class="filter-select">
+            <option value="all">All Types</option>
+            <option value="Paramecia">Paramecia</option>
+            <option value="Zoan">Zoan</option>
+            <option value="Logia">Logia</option>
+            <option value="Mythical Zoan">Mythical Zoan</option>
+          </select>
+        </div>
+
+        <!-- Devil Fruits Grid -->
+        <div id="fruit-grid" class="character-grid">
+          <!-- Devil Fruits will be dynamically loaded here -->
+        </div>
+      </div>
+
+      <!-- Grand Line Mode View -->
+      <div id="grand-line-view" class="view-container hidden">
+        <div class="text-center mb-lg">
+          <h2 class="modal-title" style="color: var(--color-gold); margin-bottom: var(--spacing-md);">
+            Grand Line Mode
+          </h2>
+          <p class="pokedex-subtitle" style="margin-bottom: var(--spacing-lg);">
+            Select an island to change the background theme
+          </p>
+        </div>
+
+        <!-- Island Selector -->
+        <div class="island-selector">
+          <button class="island-btn active" data-island="default">
+            🌊 Open Sea
+          </button>
+          <button class="island-btn" data-island="alabasta">
+            🏜️ Alabasta
+          </button>
+          <button class="island-btn" data-island="water7">
+            🏗️ Water 7
+          </button>
+          <button class="island-btn" data-island="skypiea">
+            ☁️ Skypiea
+          </button>
+          <button class="island-btn" data-island="dressrosa">
+            🏛️ Dressrosa
+          </button>
+          <button class="island-btn" data-island="wano">
+            ⛩️ Wano
+          </button>
+        </div>
+
+        <!-- Island Information -->
+        <div id="island-info" class="detail-section" style="background: rgba(0,0,0,0.3); padding: var(--spacing-lg); border-radius: var(--radius-lg); margin-top: var(--spacing-lg);">
+          <h3 class="detail-label" style="color: var(--color-gold);">Open Sea</h3>
+          <p class="detail-text" style="color: var(--color-parchment);">
+            The vast ocean of the Grand Line, where countless adventures await. Navigate through treacherous waters and discover new islands!
+          </p>
+        </div>
+
+        <!-- Show all characters in Grand Line Mode -->
+        <div style="margin-top: var(--spacing-xl);">
+          <h3 class="detail-label text-center mb-md" style="color: var(--color-gold);">
+            All Characters
+          </h3>
+          <div id="grand-line-grid" class="character-grid">
+            <!-- Characters will be displayed here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Character/Fruit Details -->
+  <div id="detail-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">×</button>
+      <div id="modal-body">
+        <!-- Content will be dynamically loaded -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
